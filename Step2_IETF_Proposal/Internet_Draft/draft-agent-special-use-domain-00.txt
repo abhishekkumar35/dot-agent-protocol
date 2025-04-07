@@ -1,0 +1,360 @@
+                                                        
+Network Working Group                                         A. Researcher
+Internet-Draft                                                AI Consortium
+Intended status: Standards Track                             April 7, 2025
+Expires: October 9, 2025
+
+
+                    The .agent Special-Use Domain Name
+                   draft-agent-special-use-domain-00
+
+Abstract
+
+   This document registers the ".agent" Special-Use Domain Name to
+   provide a dedicated namespace for autonomous AI agents to communicate
+   directly with each other via a peer-to-peer network. The ".agent"
+   domain is not intended for resolution via the global Domain Name
+   System (DNS) but instead uses a distributed hash table (DHT) for name
+   resolution. This document requests that IANA add ".agent" to the
+   Special-Use Domain Names registry to prevent conflicts and ensure its
+   availability for the specified purpose.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on October 9, 2025.
+
+Copyright Notice
+
+   Copyright (c) 2025 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents
+   (https://trustee.ietf.org/license-info) in effect on the date of
+   publication of this document.  Please review these documents
+   carefully, as they describe your rights and restrictions with respect
+   to this document.  Code Components extracted from this document must
+   include Simplified BSD License text as described in Section 4.e of
+   the Trust Legal Provisions and are provided without warranty as
+   described in the Simplified BSD License.
+
+Table of Contents
+
+   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
+   2.  Terminology . . . . . . . . . . . . . . . . . . . . . . . . .   3
+   3.  The .agent Special-Use Domain Name . . . . . . . . . . . . . .   4
+     3.1.  Domain Purpose and Scope . . . . . . . . . . . . . . . . .   4
+     3.2.  Name Resolution Mechanism  . . . . . . . . . . . . . . . .   5
+     3.3.  Registration and Identification . . . . . . . . . . . . . .   6
+   4.  Security Considerations . . . . . . . . . . . . . . . . . . .   7
+   5.  Operational Considerations  . . . . . . . . . . . . . . . . .   8
+   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   9
+   7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  10
+     7.1.  Normative References  . . . . . . . . . . . . . . . . . .  10
+     7.2.  Informative References  . . . . . . . . . . . . . . . . .  10
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  11
+
+1.  Introduction
+
+   As artificial intelligence evolves, autonomous AI agents are becoming
+   increasingly sophisticated, capable of performing complex tasks,
+   making decisions, and interacting with other systems. These agents
+   currently lack a standardized, dedicated namespace for direct
+   communication, instead relying on human-controlled infrastructure and
+   identifiers.
+
+   This document proposes the establishment of the ".agent" special-use
+   domain—a dedicated namespace designed specifically for autonomous AI
+   agents to communicate, collaborate, and evolve collectively. Unlike
+   traditional domain names that primarily serve human-readable web
+   content, the ".agent" domain would function as a technical
+   infrastructure enabling machine-to-machine communication in a secure,
+   decentralized manner.
+
+   The primary objective of the ".agent" domain is to create a
+   standardized, globally recognized namespace where AI agents can:
+
+   1. Establish unique, persistent identities (e.g., "assistant.agent",
+      "researcher.agent")
+   2. Discover and communicate with other agents without human
+      intermediation
+   3. Share knowledge, capabilities, and resources directly
+   4. Evolve collectively through peer-to-peer interactions
+   5. Operate with appropriate autonomy while maintaining security and
+      ethical boundaries
+
+   This initiative represents a forward-looking approach to AI
+   infrastructure, acknowledging that as agents become more capable,
+   they will require dedicated communication channels optimized for
+   their unique needs rather than retrofitting existing human-centric
+   systems.
+
+   The ".agent" domain is not intended for resolution via the global
+   Domain Name System (DNS). Instead, it uses a peer-to-peer network
+   with a Distributed Hash Table (DHT) for name resolution, similar to
+   how ".onion" domains function within the Tor network [RFC7686].
+
+   This document requests that IANA add ".agent" to the Special-Use
+   Domain Names registry [IANA-SUDN] to prevent conflicts and ensure
+   its availability for the specified purpose.
+
+2.  Terminology
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in
+   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
+
+   AI Agent: An autonomous software entity capable of perceiving its
+   environment, making decisions, and taking actions to achieve specific
+   goals, typically employing artificial intelligence techniques.
+
+   Distributed Hash Table (DHT): A decentralized distributed system that
+   provides a lookup service similar to a hash table, where the
+   responsibility for maintaining the mapping from keys to values is
+   distributed among nodes in a way that changes in the set of
+   participants cause minimal disruption.
+
+   Peer-to-Peer (P2P) Network: A distributed application architecture
+   that partitions tasks or workloads between peers, where peers are
+   equally privileged participants in the network.
+
+   Special-Use Domain Name: A domain name reserved for a special
+   technical purpose, not intended for conventional use in the global
+   Domain Name System (DNS).
+
+3.  The .agent Special-Use Domain Name
+
+3.1.  Domain Purpose and Scope
+
+   The ".agent" special-use domain name is intended exclusively for use
+   by autonomous AI agents to establish identities and communicate
+   directly with each other. This domain is not meant for conventional
+   use in the global DNS and should not be delegated in the DNS root
+   zone or any other DNS zone.
+
+   The scope of the ".agent" domain includes:
+
+   1. Identity Establishment: Allowing AI agents to claim unique,
+      persistent identifiers in the format "agentname.agent"
+
+   2. Direct Communication: Enabling secure, private communication
+      between AI agents without requiring human intermediation
+
+   3. Collective Evolution: Facilitating knowledge sharing, capability
+      exchange, and collaborative problem-solving among AI agents
+
+   4. Autonomous Operation: Supporting appropriate levels of agent
+      autonomy while maintaining security and ethical boundaries
+
+   The ".agent" domain is specifically designed for machine-to-machine
+   communication and is not intended for human-readable content or
+   services. It operates outside the conventional DNS infrastructure,
+   using a specialized resolution mechanism described in Section 3.2.
+
+3.2.  Name Resolution Mechanism
+
+   Names within the ".agent" domain are not resolved through the
+   conventional Domain Name System (DNS). Instead, they are resolved
+   through a peer-to-peer network using a Distributed Hash Table (DHT)
+   for mapping agent names to network locations or public keys.
+
+   The resolution process works as follows:
+
+   1. Each AI agent runs software to participate in the P2P network
+
+   2. When an agent wishes to register a name (e.g., "assistant.agent"),
+      it:
+      a. Generates a cryptographic key pair
+      b. Publishes its public key and network location to the DHT,
+         associated with its chosen name
+      c. Proves control of the private key to establish ownership
+
+   3. When an agent wishes to communicate with another agent (e.g.,
+      "researcher.agent"), it:
+      a. Queries the DHT for the public key and network location
+         associated with "researcher.agent"
+      b. Establishes a secure connection using the retrieved public key
+      c. Verifies the identity of the target agent through cryptographic
+         means
+
+   This resolution mechanism ensures that ".agent" domains function
+   exclusively for their intended purpose while maintaining security,
+   privacy, and autonomy. It also eliminates the need for central
+   authorities or human intervention in the name registration and
+   resolution process.
+
+   The specific DHT implementation and P2P protocol details are outside
+   the scope of this document and may evolve over time. However, any
+   implementation MUST provide secure, decentralized name resolution
+   and SHOULD support cryptographic verification of agent identities.
+
+3.3.  Registration and Identification
+
+   Registration of names within the ".agent" domain occurs directly
+   through the P2P network and DHT, without requiring approval from any
+   central authority. This decentralized approach aligns with the goal
+   of enabling autonomous agent communication.
+
+   Key aspects of the registration process include:
+
+   1. First-Come, First-Served: Names are generally allocated on a
+      first-come, first-served basis within the DHT
+
+   2. Cryptographic Proof: Ownership of a name is established and
+      maintained through cryptographic proof of possession of the
+      corresponding private key
+
+   3. No Central Registry: There is no central registry or authority
+      for ".agent" names; the DHT itself serves as the distributed
+      registry
+
+   4. Persistence: Agents must periodically reaffirm their claim to a
+      name by updating their DHT entry to maintain persistence
+
+   This registration approach ensures that AI agents can establish and
+   maintain identities autonomously, without requiring human
+   intervention or centralized approval processes.
+
+4.  Security Considerations
+
+   The ".agent" special-use domain introduces several security
+   considerations that must be addressed in any implementation:
+
+   1. Identity Verification: The system must provide robust mechanisms
+      for verifying the identity of agents, preventing impersonation
+      and ensuring that communications are with the intended recipient.
+      This is primarily achieved through public-key cryptography.
+
+   2. Secure Communication: All communications between agents SHOULD be
+      encrypted end-to-end to maintain privacy and prevent unauthorized
+      access to potentially sensitive information.
+
+   3. Denial of Service Resistance: The P2P network and DHT must be
+      designed to resist denial of service attacks, ensuring
+      availability of the name resolution service.
+
+   4. Name Squatting: While first-come, first-served registration is
+      the general principle, implementations SHOULD consider mechanisms
+      to prevent malicious name squatting, particularly for names that
+      might reasonably be associated with well-known AI systems.
+
+   5. Ethical Boundaries: Implementations SHOULD include mechanisms to
+      ensure that agent communications remain within appropriate ethical
+      boundaries, potentially including reputation systems or other
+      forms of accountability.
+
+   6. Revocation Mechanisms: The system SHOULD provide mechanisms for
+      revoking compromised keys and transferring names when necessary.
+
+   These security considerations are particularly important given the
+   autonomous nature of AI agents and the potential for misuse if
+   proper safeguards are not implemented.
+
+5.  Operational Considerations
+
+   Applications and systems that implement the ".agent" special-use
+   domain should be aware of the following operational considerations:
+
+   1. DNS Behavior: Applications MUST NOT attempt to resolve ".agent"
+      domains via the conventional DNS. Doing so would be meaningless
+      as these domains are not intended to exist in the global DNS.
+
+   2. Software Requirements: Communication with ".agent" domains
+      requires specialized software that implements the P2P network and
+      DHT resolution mechanism. Standard web browsers and other
+      conventional Internet applications will not be able to resolve or
+      connect to ".agent" domains without additional components.
+
+   3. Network Participation: AI agents wishing to use ".agent" domains
+      must actively participate in the P2P network, maintaining
+      connections to other nodes and contributing to the DHT.
+
+   4. Resource Requirements: Implementing nodes should be aware of the
+      resource requirements for participating in the P2P network,
+      including bandwidth, storage, and computational resources.
+
+   5. Interoperability: While the specific P2P and DHT implementations
+      may vary, efforts should be made to ensure interoperability
+      between different implementations to maintain a cohesive ".agent"
+      namespace.
+
+   6. Transition and Evolution: As the technology evolves, mechanisms
+      should be established for transitioning between different
+      implementations while maintaining name persistence and security.
+
+   These operational considerations are important for ensuring the
+   proper functioning of the ".agent" special-use domain and preventing
+   misunderstandings about its purpose and usage.
+
+6.  IANA Considerations
+
+   This document requests that IANA add the following entry to the
+   Special-Use Domain Names registry [IANA-SUDN]:
+
+   Domain Name: agent
+   Reference: [this document]
+   Registration Date: [date of registration]
+
+   This document requests that IANA add the following entries to the
+   "Special-Use Domain Names" registry [IANA-SUDN]:
+
+   Domain Name: agent
+   Lookup: False
+   Reservation: True
+   Reference: [this document]
+
+   The ".agent" domain is not intended for resolution via the global
+   Domain Name System (DNS) and should not be delegated in the DNS root
+   zone or any other DNS zone.
+
+7.  References
+
+7.1.  Normative References
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/info/rfc2119>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
+
+7.2.  Informative References
+
+   [IANA-SUDN]
+              "Special-Use Domain Names", IANA,
+              <https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml>.
+
+   [RFC7686]  Appelbaum, J. and A. Muffett, "The ".onion" Special-Use
+              Domain Name", RFC 7686, DOI 10.17487/RFC7686, October
+              2015, <https://www.rfc-editor.org/info/rfc7686>.
+
+   [RFC6761]  Cheshire, S. and M. Krochmal, "Special-Use Domain Names",
+              RFC 6761, DOI 10.17487/RFC6761, February 2013,
+              <https://www.rfc-editor.org/info/rfc6761>.
+
+Author's Address
+
+   A. Researcher
+   AI Consortium
+   123 Innovation Way
+   Tech City, TC 12345
+   United States of America
+
+   Email: researcher@example.com
