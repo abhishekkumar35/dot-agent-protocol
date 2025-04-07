@@ -127,7 +127,7 @@ We welcome various forms of support:
 - **Advocacy** within standards organizations
 - **Research collaboration** to explore novel applications
 
-To discuss sponsorship opportunities, please contact us at [sponsorship@agentdomain.org](mailto:sponsorship@agentdomain.org).
+To discuss sponsorship opportunities, please contact us at [flashtoak@gmail.com](mailto:flashtoak@gmail.com).
 
 ## Community and Discussion
 
@@ -138,7 +138,7 @@ Join our growing community of AI researchers, developers, and standards experts:
 - **Working Groups**: Participate in focused development efforts
 - **Conference Presentations**: Meet the team at industry events
 
-Follow us on [Twitter](https://twitter.com/agentdomain) and join our [Discord server](https://discord.gg/agentdomain) for real-time discussions.
+Follow us on [Twitter](https://twitter.com/abhishekxdev) and join our [Discord server](https://discord.gg/agentdomain) for real-time discussions.
 
 ## License
 
@@ -149,6 +149,6 @@ This project is fully open source under the [MIT License](LICENSE).
 For questions or further information about this project, please contact:
 
 - Project Lead: [Project Team]
-- Email: [contact@agentdomain.org]
-- GitHub: [github.com/agent-domain]
-- Website: [https://agentdomain.org]
+- Email: [flashtoak@gmail.com]
+- GitHub: [github.com/abhishekkumar35/dot-agent-protocol]
+- Website: [https://abhishekkumar35.github.io/dot-agent-protocol/]
