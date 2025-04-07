@@ -138,7 +138,7 @@ Join our growing community of AI researchers, developers, and standards experts:
 - **Working Groups**: Participate in focused development efforts
 - **Conference Presentations**: Meet the team at industry events
 
-Follow us on [Twitter](https://twitter.com/abhishekxdev) and join our [Discord server](https://discord.gg/agentdomain) for real-time discussions.
+Follow us on [Twitter](https://twitter.com/abhishekxdev) and Contribute to create our discord channel for real-time discussions.
 
 ## License
 
